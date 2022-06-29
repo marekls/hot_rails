@@ -2,13 +2,15 @@
 
 <h1>Post hots</h1>
 
-<div id="post_hots">
-  <% @post_hots.each do |post_hot| %>
-    <%= render post_hot %>
-    <p>
-      <%= link_to "Show this post hot", post_hot %>
-    </p>
-  <% end %>
-</div>
+<%= turbo_frame_tag 'post_hots', style: 'border: 3px solid black' do %>
+    <div>
+      <% @post_hots.each do |post_hot| %>
+        <%= render post_hot %>
+        <p>
+          <%= link_to "Show this post hot", post_hot, "data-turbo-frame": "_top" %>
+        </p>
+      <% end %>
+    </div>
+    <%= link_to "New post hot", new_post_hot_path %>
+<% end %>
 
-<%= link_to "New post hot", new_post_hot_path %>

@@ -24,7 +24,7 @@ class PostHotsController < ApplicationController
     @post_hot = PostHot.new(post_hot_params)
 
     if @post_hot.save
-      redirect_to @post_hot, notice: "Post hot was successfully created."
+      redirect_to post_hots_url, notice: "Post hot was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
