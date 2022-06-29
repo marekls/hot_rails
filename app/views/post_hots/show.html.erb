@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post_hot %>
+
+<div>
+  <%= link_to "Edit this post hot", edit_post_hot_path(@post_hot) %> |
+  <%= link_to "Back to post hots", post_hots_path %>
+
+  <%= button_to "Destroy this post hot", @post_hot, method: :delete %>
+</div>

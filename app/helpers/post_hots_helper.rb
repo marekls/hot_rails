@@ -1,0 +1,2 @@
+module PostHotsHelper
+end

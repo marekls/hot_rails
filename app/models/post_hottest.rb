@@ -1,0 +1,2 @@
+class PostHottest < ApplicationRecord
+end

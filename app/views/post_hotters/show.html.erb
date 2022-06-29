@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post_hotter %>
+
+<div>
+  <%= link_to "Edit this post hotter", edit_post_hotter_path(@post_hotter) %> |
+  <%= link_to "Back to post hotters", post_hotters_path %>
+
+  <%= button_to "Destroy this post hotter", @post_hotter, method: :delete %>
+</div>

@@ -1,0 +1,2 @@
+class PostHot < ApplicationRecord
+end
