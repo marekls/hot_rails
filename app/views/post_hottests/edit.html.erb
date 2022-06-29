@@ -1,7 +1,7 @@
 <h1>Editing post hottest</h1>
-
-<%= render "form", post_hottest: @post_hottest %>
-
+<%= turbo_frame_tag @post_hottest, style: 'border: 3px solid red' do %>
+  <%= render "form", post_hottest: @post_hottest %>
+<% end %>
 <br>
 
 <div>

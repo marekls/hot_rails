@@ -8,5 +8,10 @@
     <strong>Body:</strong>
     <%= post_hottest.body %>
   </p>
-
+  <% if params[:action].nil? || params[:action] == 'index' %>
+    <p>
+      <%= link_to "Show this post hottest", post_hottest %> |
+      <%= link_to "Destroy this post hottest", post_hottest, "data-turbo-method": :delete %>
+    </p>
+  <% end %>
 </div>

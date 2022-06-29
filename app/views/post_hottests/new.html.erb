@@ -1,7 +1,7 @@
 <h1>New post hottest</h1>
-
-<%= render "form", post_hottest: @post_hottest %>
-
+<%= turbo_frame_tag PostHottest.new, style: 'border: 3px solid green' do %>
+  <%= render "form", post_hottest: @post_hottest %>
+<% end %>
 <br>
 
 <div>
