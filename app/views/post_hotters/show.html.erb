@@ -1,10 +1,10 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @post_hotter %>
-
+<%= turbo_frame_tag @post_hotter, style: 'border: 3px solid red' do %>
+  <%= render @post_hotter %>
+<% end %>
 <div>
-  <%= link_to "Edit this post hotter", edit_post_hotter_path(@post_hotter) %> |
+  <%= link_to "Edit this post hotter", edit_post_hotter_path(@post_hotter), "data-turbo-frame": dom_id(@post_hotter) %> |
   <%= link_to "Back to post hotters", post_hotters_path %>
 
-  <%= button_to "Destroy this post hotter", @post_hotter, method: :delete %>
+  <%= button_to "Destroy this post hotter", @post_hotter, method: :delete, "data-turbo": false %>
 </div>

@@ -1,7 +1,7 @@
 <h1>Editing post hotter</h1>
-
-<%= render "form", post_hotter: @post_hotter %>
-
+<%= turbo_frame_tag @post_hotter, style: 'border: 3px solid red' do %>
+  <%= render "form", post_hotter: @post_hotter %>
+<% end %>
 <br>
 
 <div>

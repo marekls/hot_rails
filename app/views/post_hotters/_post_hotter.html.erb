@@ -8,5 +8,10 @@
     <strong>Body:</strong>
     <%= post_hotter.body %>
   </p>
-
+  <% if params[:action] != 'show' %>
+    <p>
+      <%= link_to "Show this post hotter", post_hotter %> |
+      <%= link_to "Destroy this post hotter", post_hotter, "data-turbo-method": :delete %>
+    </p>
+  <% end %>
 </div>

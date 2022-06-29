@@ -24,7 +24,10 @@ class PostHottersController < ApplicationController
     @post_hotter = PostHotter.new(post_hotter_params)
 
     if @post_hotter.save
-      redirect_to @post_hotter, notice: "Post hotter was successfully created."
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to @post_hotter, notice: "Post hotter was successfully created." }
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -42,7 +45,10 @@ class PostHottersController < ApplicationController
   # DELETE /post_hotters/1
   def destroy
     @post_hotter.destroy
-    redirect_to post_hotters_url, notice: "Post hotter was successfully destroyed."
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to post_hotters_url, notice: "Post hotter was successfully destroyed." }
+    end
   end
 
   private
